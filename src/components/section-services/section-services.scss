@@ -1,0 +1,111 @@
+.section-services {
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
+    gap: 20px;
+
+    @media only screen and (min-width: 768px) {
+        padding: 30px 60px;
+    }
+
+    &__title {
+        color: #ffffff;
+        font-size: 32px;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        @media only screen and (min-width: 768px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media only screen and (min-width: 1024px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .services {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .reserve {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+
+            &__title {
+                color: #ffffff;
+            }
+
+            &__content {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+
+                .phone {
+                    display: flex;
+                    flex-direction: row;
+
+                    &__icon {
+                        width: 20px;
+                        height: 20px;
+                    }
+
+                    &__text {
+                        color: var(--white);
+                        margin-left: 4px;
+                        line-height: 20px;
+                    }
+
+                    &__tel {
+                        color: var(--springBud);
+                        text-decoration: none;
+                        margin-left: 10px;
+                        line-height: 20px;
+                    }
+                }
+
+                .email {
+                    display: flex;
+                    flex-direction: row;
+
+                    &__icon {
+                        width: 20px;
+                        height: 20px;
+                    }
+
+                    &__text {
+                        color: var(--white);
+                        margin-left: 4px;
+                        line-height: 20px;
+                    }
+
+                    &__to {
+                        color: var(--springBud);
+                        text-decoration: none;
+                        margin-left: 10px;
+                        line-height: 20px;
+                    }
+                }
+
+                .logo {
+                    margin-top: 20px;
+                    width: 50%;
+                }
+            }
+        }
+    }
+
+    .all-services-btn {
+        color: var(--springBud);
+        width: fit-content;
+    }
+}

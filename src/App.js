@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+import logoSlogan from './logo.svg';
+import Header from './components/header/header';
+import SectionServices from './components/section-services/section-services';
+import SectionIntroduction from './components/section-introduction/section-introduction';
+import SectionFollowUs from './components/section-follow-us/section-follow-us';
+import Footer from './components/footer/footer';
+import FastMessageButton from './components/fast-message-button/fast-message-button';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="">
+      <Header/>
+      <div className="page-content">
+        <div className="hero"></div>
+        <SectionIntroduction />
+        <SectionServices />
+        <SectionFollowUs />
+        <Footer />
+        <FastMessageButton />
+      </div>
     </div>
   );
 }

@@ -1,0 +1,67 @@
+.service-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 2px solid #41424C;
+    background-color: #41424C;
+    border-radius: 10px;
+    padding: 12px;
+
+    .title-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+
+        .title {
+            color: var(--white);
+            font-size: 16px;
+        }
+
+        .arrow {
+            font-size: 16px;
+            color: var(--white);
+            transition: transform 0.3s ease;
+          }
+          
+          .arrow.expanded {
+            transform: rotate(90deg); /* Rotate the arrow when expanded */
+          }
+    }
+    
+    .content {
+        display: flex;
+        flex-direction: column;
+        padding: 0 20px;
+        text-decoration: none;
+
+        li {
+            color: #ffffff;
+            font-size: 16px;
+        }
+    }
+
+    ul {
+        list-style: none; /* Remove default bullets */
+        padding: 0;
+        margin: 0;
+      }
+      
+      ul li {
+        position: relative; /* Needed for positioning the check icon */
+        padding-left: 30px; /* Add space for the check icon */
+      }
+      
+      ul li::before {
+        content: '';
+        position: absolute;
+        left: 0; /* Position the icon on the left */
+        top: 50%; /* Center vertically */
+        transform: translateY(-50%); /* Adjust for centering */
+        width: 16px; /* Set width of the icon */
+        height: 16px; /* Set height of the icon */
+        background-image: url('../../images/icon-check.png'); /* Path to your check icon */
+        background-size: contain; /* Ensure the icon fits within its box */
+        background-repeat: no-repeat; /* Prevent repetition */
+      }
+}
