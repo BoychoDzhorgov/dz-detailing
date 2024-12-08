@@ -28,7 +28,7 @@ export default function Header() {
                 <a href="#home" onClick={(e) => handleScroll(e, "home")}>Начало</a>
                 <a href="#section-services" onClick={(e) => handleScroll(e, "section-services")}>Услуги и цени</a>
                 <a href="#section-follow-us" onClick={(e) => handleScroll(e, "section-follow-us")}>Резултати</a>
-                <a href="#faq" onClick={(e) => handleScroll(e, "faq")}>Чести въпроси</a>
+                <a href="#section-faq" onClick={(e) => handleScroll(e, "section-faq")}>Чести въпроси</a>
                 <a href="#about" onClick={(e) => handleScroll(e, "about")}>За нас</a>
             </nav>
         </header>

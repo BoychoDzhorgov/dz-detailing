@@ -1,0 +1,31 @@
+.faq-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 2px solid var(--graphite);
+    background-color: var(--graphite);
+    border-radius: 10px;
+    padding: 12px;
+
+    .title-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+
+        .title {
+            color: var(--white);
+            font-size: 16px;
+        }
+
+        .arrow {
+            font-size: 16px;
+            color: var(--white);
+            transition: transform 0.3s ease;
+          }
+          
+          .arrow.expanded {
+            transform: rotate(90deg); /* Rotate the arrow when expanded */
+          }
+    }
+}
