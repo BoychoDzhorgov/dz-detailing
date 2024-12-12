@@ -23,6 +23,17 @@ export default function Header() {
     const isMobile = useIsMobile();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+    useEffect(() => {
+        if (isMenuOpen) {
+            document.body.classList.add("no-scroll");
+        } else {
+            document.body.classList.remove("no-scroll");
+        }
+        return () => {
+            document.body.classList.remove("no-scroll");
+        };
+    }, [isMenuOpen]);
+
     const handleScroll = (e, targetId) => {
         e.preventDefault();
         const targetElement = document.getElementById(targetId);

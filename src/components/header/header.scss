@@ -1,3 +1,7 @@
+.no-scroll {
+    overflow: hidden;
+}
+
 .desktop-header {
     display: flex;
     align-items: center;
@@ -57,7 +61,6 @@
         
         img {
             height: 100%;
-            // width: 100%;
         }
     }
 
@@ -81,6 +84,9 @@
         align-items: center;
         height: 90%;
         justify-content: space-between;
+        overflow-y: hidden;
+        max-height: 100vh;
+        overflow-y: auto;
 
         &__item {
             text-decoration: none;
