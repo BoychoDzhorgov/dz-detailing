@@ -3,11 +3,12 @@ import servicesData from "../../data/servicesData"
 import Phone from "../../images/icon-phone.png";
 import Mail from "../../images/icon-mail-fill.png"
 import LogoSlogan from "../../images/logo-slogan.png";
+import Important from "../../images/icon-important.png";
 import "./section-services.scss"
 
 export default function SectionServices () {
     return (
-        <div className="section-services" id="section-services">
+        <div className="section-services" id="services">
             <h2 className="section-services__title">Услуги и цени</h2>
             <div className="section-services__content">
                 <div className="services">
@@ -29,6 +30,10 @@ export default function SectionServices () {
                             <a className="email__to" href="mailto:dz.detailing24@gmail.com">dz.detailing24@gmail.com</a>
                         </div>
                         <img className="logo" src={LogoSlogan} />
+                        <div className="important-notice">
+                            <img className="important-notice__icon" src={Important} />
+                            <div className="important-notice__text">При силно замърсени автомобили цената се определя след оглед.</div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -2,8 +2,8 @@ import "./footer.scss"
 import LogoSlogan from "../../images/logo-slogan.png"
 import Instagram from "../../images/icon-instagram.svg"
 import Facebook from "../../images/icon-facebook.svg"
-import Phone from "../../images/icon-phone-footer.png"
-import Mail from "../../images/icon-mail-footer.png"
+import Phone from "../../images/icon-phone.png"
+import Mail from "../../images/icon-mail-fill.png"
 
 export default function Footer() {
     return (

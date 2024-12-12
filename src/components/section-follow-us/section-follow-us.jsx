@@ -14,7 +14,7 @@ export default function SectionFollowUs () {
       }, []);
     
       return (
-        <div className="follow-us-section" id="section-follow-us">
+        <div className="follow-us-section" id="follow-us">
             <h2 className="section-title">Резултатите от нашата работа</h2>
             <div
                 className="embedsocial-hashtag"

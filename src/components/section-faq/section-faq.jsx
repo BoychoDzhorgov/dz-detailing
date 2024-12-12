@@ -4,7 +4,7 @@ import "./section-faq.scss";
 
 export default function SectionFaq () {
     return (
-        <div className="section-faq" id="section-faq">
+        <div className="section-faq" id="faqs">
             <h2 className="section-faq__title">Често задавани въпроси</h2>
             <div className="section-faq__content">
                 <div className="faqs">

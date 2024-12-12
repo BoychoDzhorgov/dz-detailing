@@ -100,6 +100,24 @@
                     margin-top: 20px;
                     width: 50%;
                 }
+
+                .important-notice {
+                    display: flex;
+                    flex-direction: row;
+                    padding: 28px;
+                    
+                    &__icon {
+                        width: 16px;
+                        height: 16px;
+                    }
+
+                    &__text {
+                        line-height: 16px;
+                        margin-left: 10px;
+                        color: var(--white);
+                        font-size: 14px;
+                    }
+                }
             }
         }
     }

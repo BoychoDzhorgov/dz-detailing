@@ -7,25 +7,24 @@
     border-radius: 10px;
     padding: 12px;
 
-    .title-container {
+    &__title-container {
         display: flex;
         justify-content: space-between;
         align-items: center;
         cursor: pointer;
 
-        .title {
+        &__title {
             color: var(--white);
             font-size: 16px;
         }
 
-        .arrow {
-            font-size: 16px;
-            color: var(--white);
-            transition: transform 0.3s ease;
-          }
+        &__arrow {
+          display: flex;
           
-          .arrow.expanded {
-            transform: rotate(90deg); /* Rotate the arrow when expanded */
+          &__icon {
+            width: 24px;
+            height: 24px;
           }
+        }
     }
 }

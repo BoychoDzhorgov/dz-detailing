@@ -1,67 +1,88 @@
 .service-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 2px solid #41424C;
+  background-color: #41424C;
+  border-radius: 10px;
+  padding: 12px;
+  
+  .title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    
+    &__title {
+      color: var(--white);
+      font-size: 16px;
+    }
+
+    &__arrow {
+      display: flex;
+      
+      &__icon {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+  
+  .car-types-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    padding: 0 20px;
+
+    &__item {
+      &__icon {
+        width: 50px;
+        height: 50px;
+      }
+
+      &__price {
+        color: var(--white);
+        text-align: center;
+      }
+    }
+  }
+  
+  .content {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    border: 2px solid #41424C;
-    background-color: #41424C;
-    border-radius: 10px;
-    padding: 12px;
-
-    .title-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        cursor: pointer;
-
-        .title {
-            color: var(--white);
-            font-size: 16px;
-        }
-
-        .arrow {
-            font-size: 16px;
-            color: var(--white);
-            transition: transform 0.3s ease;
-          }
-          
-          .arrow.expanded {
-            transform: rotate(90deg); /* Rotate the arrow when expanded */
-          }
-    }
+    padding: 0 20px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
     
-    .content {
-        display: flex;
-        flex-direction: column;
-        padding: 0 20px;
-        text-decoration: none;
-
-        li {
-            color: #ffffff;
-            font-size: 16px;
-        }
+    li {
+      color: #ffffff;
+      font-size: 16px;
     }
-
-    ul {
-        list-style: none; /* Remove default bullets */
-        padding: 0;
-        margin: 0;
-      }
-      
-      ul li {
-        position: relative; /* Needed for positioning the check icon */
-        padding-left: 30px; /* Add space for the check icon */
-      }
-      
-      ul li::before {
-        content: '';
-        position: absolute;
-        left: 0; /* Position the icon on the left */
-        top: 50%; /* Center vertically */
-        transform: translateY(-50%); /* Adjust for centering */
-        width: 16px; /* Set width of the icon */
-        height: 16px; /* Set height of the icon */
-        background-image: url('../../images/icon-check.png'); /* Path to your check icon */
-        background-size: contain; /* Ensure the icon fits within its box */
-        background-repeat: no-repeat; /* Prevent repetition */
-      }
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  ul li {
+    position: relative;
+    padding-left: 30px;
+  }
+  
+  ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background-image: url('../../images/icon-check.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
 }
