@@ -7,6 +7,7 @@ import Footer from './components/footer/footer';
 import FastMessageButton from './components/fast-message-button/fast-message-button';
 import SectionFaq from './components/section-faq/section-faq';
 import SectionAboutUs from "./components/section-about-us/section-about-us";
+import SectionHero from './components/section-hero/section-hero';
 import './App.css';
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
     <div className="">
       <Header/>
       <div className="page-content">
-        <div className="hero"></div>
+        <SectionHero />
         <SectionIntroduction />
         <SectionServices />
         <SectionFollowUs />

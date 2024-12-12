@@ -8,7 +8,7 @@
     justify-content: space-between;
     height: 100px;
     padding: 0 5rem 0 3rem;
-    background-color: #000000;
+    background-color: var(--dark);
     position: fixed;
     width: 100%;
     z-index: 999;
@@ -31,7 +31,7 @@
     nav a {
         padding: 0 1rem;
         align-content: center;
-        color: #FFFFFF;
+        color: var(--white);
         text-decoration: none;
         height: 100%;
     }
@@ -39,8 +39,8 @@
     nav a:hover {
         height: 100%;
         align-content: center;
-        background-color: #9CED00;
-        color: #FFFFFF;
+        background-color: var(--springBud);
+        color: var(--white);
     }
 }
 
@@ -50,12 +50,12 @@
     justify-content: space-between;
     height: 100px;
     padding: 0 2rem 0 2rem;
-    background-color: #000000;
+    background-color: var(--dark);
     position: fixed;
     width: 100%;
     z-index: 999;
     overflow: hidden;
-
+    
     &__logo-slogan {
         height: 90px;
         
@@ -63,7 +63,7 @@
             height: 100%;
         }
     }
-
+    
     &__menu-toggle {
         background: none;
         border: none;
@@ -87,10 +87,37 @@
         overflow-y: hidden;
         max-height: 100vh;
         overflow-y: auto;
-
+        transform: translateY(-100%);
+        z-index: 997;
+        transition: transform 0.8s ease, opacity 0.8s ease;
+        
         &__item {
             text-decoration: none;
             color: var(--white);
+            font-size: 20px;
         }
+
+        &.opening {
+            transform: translateY(0);
+            opacity: 1;
+            z-index: 998;
+        }
+
+        &.closing {
+            transform: translateY(-100%);
+            opacity: 0;
+            z-index: 997;
+        }
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(100%);
     }
 }

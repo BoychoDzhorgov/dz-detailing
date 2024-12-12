@@ -1,38 +1,33 @@
 import "./header.scss"
 import React, { useState, useEffect } from "react";
+import { useIsMobile } from "../../hooks/use-mobile";
 import Logo from "../../images/logo.png"
 import BurgerMenuIcon from "../../images/icon-burger-menu.png";
 import CloseIcon from "../../images/icon-close.png";
 
-const useIsMobile = () => {
-    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-  
-    useEffect(() => {
-      const handleResize = () => {
-        setIsMobile(window.innerWidth <= 768);
-      };
-  
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }, []);
-  
-    return isMobile;
-  };
-
 export default function Header() {
     const isMobile = useIsMobile();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [menuState, setMenuState] = useState(""); 
 
     useEffect(() => {
         if (isMenuOpen) {
+            setMenuState("opening");
             document.body.classList.add("no-scroll");
         } else {
+            setMenuState("closing");
             document.body.classList.remove("no-scroll");
         }
         return () => {
             document.body.classList.remove("no-scroll");
         };
     }, [isMenuOpen]);
+
+    const handleAnimationEnd = () => {
+        if (!isMenuOpen) {
+            setMenuState("");
+        }
+    };
 
     const handleScroll = (e, targetId) => {
         e.preventDefault();
@@ -72,8 +67,9 @@ export default function Header() {
                         )}
                     </button>
                     {isMenuOpen && (
-                        <nav className="mobile-header__mobile-navigation">
-                            <a className="mobile-header__mobile-navigation__item" href="#home" onClick={(e) => handleScroll(e, "home")}>Начало</a>
+                        <nav className={`mobile-header__mobile-navigation ${menuState}`}
+                            onAnimationEnd={handleAnimationEnd}>
+                            <a className="mobile-header__mobile-navigation__item" href="#hero" onClick={(e) => handleScroll(e, "hero")}>Начало</a>
                             <a className="mobile-header__mobile-navigation__item" href="#services" onClick={(e) => handleScroll(e, "services")}>Услуги и цени</a>
                             <a className="mobile-header__mobile-navigation__item" href="#follow-us" onClick={(e) => handleScroll(e, "follow-us")}>Резултати</a>
                             <a className="mobile-header__mobile-navigation__item" href="#faqs" onClick={(e) => handleScroll(e, "faqs")}>Чести въпроси</a>
@@ -87,7 +83,7 @@ export default function Header() {
                         <img src={Logo}/>
                     </div>
                         <nav>
-                            <a href="#home" onClick={(e) => handleScroll(e, "home")}>Начало</a>
+                            <a href="#hero" onClick={(e) => handleScroll(e, "hero")}>Начало</a>
                             <a href="#services" onClick={(e) => handleScroll(e, "services")}>Услуги и цени</a>
                             <a href="#follow-us" onClick={(e) => handleScroll(e, "follow-us")}>Резултати</a>
                             <a href="#faqs" onClick={(e) => handleScroll(e, "faqs")}>Чести въпроси</a>
